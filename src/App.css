@@ -7,32 +7,150 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* 왼쪽 정렬 */
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-box, .signup-box {
+  background-color: #333;
+  padding: 20px;
+  margin-left: 50px;
+  margin-top: 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-container, .signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.login-container input, .signup-container input {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+  width: 250px; 
+}
+
+.login-container button, .signup-container button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 250px; 
+  display: flex; 
+  align-items: center; /* 수직 정렬 */
+  justify-content: center; /* 수평 정렬 */
+}
+
+.forgot-link {
+  margin-top: 10px;
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.social-login {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* 너비 조절 */
+}
+
+.social-login button {
+  margin: 5px 0;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 250px;
+  display: flex; /* Flexbox 사용 */
+  align-items: center; /* 수직 정렬 */
+  justify-content: center; /* 수평 정렬 */
+}
+
+.social-logo {
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.header-icon {
+  position: absolute; 
+  top: 20px;
+  left: 20px; 
+  font-size: 40px; 
+  color: #fff; 
+  z-index: 10; 
+}
+
+.header-icon2 {
+  position: absolute; 
+  top: 20px;
+  right: 20px; 
+  font-size: 40px; 
+  color: #fff; 
+  z-index: 10; 
+}
+
+.login-box {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative; /* 위치가 절대적인 요소에 대한 상대적 기준 제공 */
+}
+
+.container-box {
+  background-color: #333;
+  padding: 50px;
+  margin-left: 50px;
+  margin-top: 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.container-box h1 {
+  font-size: 0.6em;
+}
+
+.container-box h2 {
+  font-size: 1.4em;
+}
+
+.icon {
+  margin: 10px 0;
+  font-size: 100px;
+  display: flex;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
