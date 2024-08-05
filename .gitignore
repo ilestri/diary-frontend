@@ -39,9 +39,6 @@ Thumbs.db
 # ESLint cache
 .eslintcache
 
-# macOS 시스템 파일
-.DS_Store
-
 # 스타일링 라이브러리 캐시 (예: styled-components)
 .stylelintrc
 
