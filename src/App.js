@@ -9,7 +9,7 @@ import googleLogo from "./assets/google-icon.png";
 import appleLogo from "./assets/apple-icon.png";
 import kakaoLogo from "./assets/naver-icon.png";
 import ForgotPassword from "./components/ForgotPassword";
-import Footer from "./components/Footer"; // Footer 컴포넌트 임포트
+import Footer from "./components/Footer";
 import "./styles/App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,6 +17,8 @@ import {
   faCircleExclamation,
   faBell,
 } from "@fortawesome/free-solid-svg-icons";
+import CoupleCheck from "./CoupleCheck"; // CoupleCheck 컴포넌트 임포트
+import Schedule from "./components/Schedule";
 
 // 로그인 페이지 컴포넌트
 function App() {
@@ -33,6 +35,7 @@ function App() {
   const handleGoogleLogin = () => {
     // 구글 로그인 로직 추가
     console.log("Google login");
+    navigate("/Schedule");
   };
 
   const handleAppleLogin = () => {
@@ -59,8 +62,8 @@ function App() {
         <div className="header-icon2">
           <FontAwesomeIcon icon={faBell} />
         </div>
-        <div className="login-box">
-          <div className="login-container">
+        <div className="box">
+          <div className="container">
             <input
               type="email"
               placeholder="Email"
@@ -78,6 +81,7 @@ function App() {
             <a href="/forgot-password" className="forgot-link">
               비밀번호를 까먹으셨나요?
             </a>
+            <br />
             <div className="login-buttons">
               <button onClick={handleGoogleLogin}>
                 <img
@@ -122,9 +126,9 @@ function Signup() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="signup-box">
+        <div className="box">
           <h2>회원가입</h2>
-          <div className="login-container">
+          <div className="container">
             <input
               type="text"
               placeholder="이름"
@@ -179,6 +183,7 @@ function Dashboard() {
   const handleConnect = () => {
     // 연인 연결 로직 추가
     console.log("Connecting with", email);
+    navigate("/couple-check"); // CoupleCheck 페이지로 이동
   };
 
   return (
@@ -190,8 +195,8 @@ function Dashboard() {
         <div className="header-icon2">
           <FontAwesomeIcon icon={faBell} />
         </div>
-        <div className="container-box">
-          <div className="login-container">
+        <div className="box container-box">
+          <div className="container">
             <h2>
               연인과 연결하여 <br /> 일기를 적어보세요
             </h2>
@@ -232,7 +237,9 @@ function MainApp() {
         <Route path="/" element={<App />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/couple-check" element={<CoupleCheck />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="Schedule" element={<Schedule />} />
       </Routes>
     </Router>
   );
