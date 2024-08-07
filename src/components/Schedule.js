@@ -15,6 +15,7 @@ import "react-datepicker/dist/react-datepicker.css";
 function Schedule() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null); // 날짜 선택 상태
+  const [textInput, setTextInput] = useState(""); // 텍스트 입력 상태
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -22,6 +23,11 @@ function Schedule() {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  };
+
+  // 텍스트 입력 필드의 값이 변경될 때 호출되는 함수
+  const handleTextInputChange = (event) => {
+    setTextInput(event.target.value);
   };
 
   return (
@@ -46,12 +52,18 @@ function Schedule() {
         {isModalOpen && (
           <div className="modal-overlay">
             <div className="modal">
-              <p>날짜를 선택하세요:</p>
               <DatePicker
                 selected={selectedDate}
                 onChange={(date) => setSelectedDate(date)}
                 dateFormat="yyyy/MM/dd"
                 className="date-picker"
+              />
+              {/*<p>날짜를 선택하세요:</p> <br /> */}
+              <textarea
+                value={textInput}
+                onChange={handleTextInputChange}
+                className="text-input"
+                placeholder="오늘 무슨 일이 있으셨나요?"
               />
               <div className="modal-buttons">
                 <button className="close-button" onClick={handleCloseModal}>
