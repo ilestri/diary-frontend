@@ -10,23 +10,51 @@
    <body>
       <header></header>
       <div class="overlay"></div>
+      <div class="modal" id="settingsModal">
+         <div class="modal_content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>환경설정</h2>
+            <ul>
+               <li>푸시설정</li>
+               <li>서비스 이용약관</li>
+               <li>제휴안내</li>
+               <li>버전 정보</li>
+               <li>연인 해제</li>
+            </ul>
+         </div>
+      </div>
       <div class="main-layout">
          <nav>
             <div class="nav_container">
                <a href="#" class="btn_nav"><i class="fa-solid fa-bars fa-2xl"></i></a>
-               <div class="nav_menu">
-                  <a href="#" class="nav_item">메뉴1</a>
-                  <a href="#" class="nav_item">메뉴2</a>
-                  <a href="#" class="nav_item">메뉴3</a>
-               </div>
+               <ul class="nav_menu">
+                  <li class="nav_item">
+                     개인정보
+                     <ul class="sub_menu">
+                        <li><a href="#" class="nav_sub_item">개인정보 확인</a></li>
+                        <li><a href="#" class="nav_sub_item">개인정보 수정</a></li>
+                     </ul>
+                  </li>
+                  <li class="nav_item">
+                     일기정보
+                     <ul class="sub_menu">
+                        <li><a href="#" class="nav_sub_item">일기 추가</a></li>
+                        <li><a href="#" class="nav_sub_item">일기 수정</a></li>
+                        <li><a href="#" class="nav_sub_item">일기 삭제</a></li>
+                     </ul>
+                  </li>
+               </ul>
             </div>
             <a href="#" class="btn_setting"><i class="fa-solid fa-gears fa-2xl"></i></a>
          </nav>
+
          <section>
             <div class="couple_info">
                <div class="couple_name">
                   <div class="bf_name">준혁님</div>
-                  <div class="couple_heart"><i class="fa-regular fa-heart fa-xl"></i></div>
+                  <div class="couple_heart">
+                     <i class="fa-regular fa-heart fa-xl"></i>
+                  </div>
                   <div class="gf_name">범준님</div>
                </div>
                <div class="couple_date">사랑한지 100일째</div>
@@ -53,5 +81,6 @@
          </aside>
       </div>
       <footer></footer>
+      <script src="main.js"></script>
    </body>
 </html>
