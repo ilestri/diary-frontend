@@ -15,6 +15,11 @@ li {
   list-style: none;
 }
 
+a {
+   text-decoration: none;
+   color: black;
+}
+
 header,
 footer {
   color: #fff;
@@ -30,10 +35,10 @@ footer {
 
 nav,
 aside {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  padding: 20px;
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   padding: 20px;
 }
 
 nav {
@@ -49,13 +54,13 @@ nav {
 }
 
 aside {
-  right: 0;
-  margin-right: 9.5%;
-  width: 12.5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+   right: 0;
+   margin-right: 9.5%;
+   width: 12.5%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
 }
 
 section {
@@ -76,16 +81,16 @@ section {
 }
 
 .nav_menu {
-  display: none;
-  flex-direction: column;
-  background-color: #fff;
-  position: absolute;
-  top: 20%;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  z-index: 5;
+   display: none;
+   flex-direction: column;
+   background-color: #fff;
+   position: absolute;
+   top: 20%;
+   left: 0;
+   width: 195px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   border-radius: 8px;
+   z-index: 5;
 }
 
 .nav_menu,
