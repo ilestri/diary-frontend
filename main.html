@@ -15,7 +15,7 @@
         <span class="close" id="closeModal">&times;</span>
         <h2>환경설정</h2>
         <div class="modal_container">
-          <ul>
+          <ul class="modal_lists">
             <li class="modal_list"><button class="modal-button" id="btnChangeTheme">푸시설정</button></li>
             <li class="modal_list"><button class="modal-button" id="btnTerms">서비스 이용약관</button></li>
             <li class="modal_list"><button class="modal-button" id="btnPartnership">제휴안내</button></li>
@@ -31,7 +31,7 @@
       <div class="modal_content">
         <span class="close" id="closeUnlinkModal">&times;</span>
         <h2>연인 해제</h2>
-        <div>
+        <div class="modal_clear">
           <label for="email">이메일:</label>
           <input type="email" id="email" placeholder="이메일 주소 입력" required />
           <label for="userId">아이디:</label>
@@ -105,7 +105,21 @@
       <aside>
         <div class="aside_top">
           <a class="btn_calendar"><i class="fas fa-calendar-days fa-2xl"></i></a>
-          <a class="btn_notice"><i class="fa-regular fa-bell fa-2xl"></i></a>
+          <!-- 알림 버튼 추가 -->
+          <a href="#" class="btn_notice"><i class="fa-regular fa-bell fa-2xl"></i></a>
+          <div class="notification-overlay" id="notificationOverlay"></div>
+          <div class="notification-panel" id="notificationPanel">
+            <div class="notification-header">
+              <h3>알림</h3>
+              <button class="close_btn" id="closeNotice">×</button>
+            </div>
+            <ul class="notice_menu" id="noticeMenu">
+              <li class="notice_list">알림 내용 1 <button class="list_close">×</button></li>
+              <li class="notice_list">알림 내용 2 <button class="list_close">×</button></li>
+              <li class="notice_list">알림 내용 3 <button class="list_close">×</button></li>
+              <button class="btn_all_clear">모두 지우기</button>
+            </ul>
+          </div>
         </div>
         <div class="aside_bot"></div>
         <a class="btn_write"><i class="fa-solid fa-pen-to-square fa-2xl"></i></a>
