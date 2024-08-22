@@ -115,13 +115,45 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
+  const [birthdate, setBirthdate] = useState(""); // 생일 추가
   const navigate = useNavigate();
 
-  const handleSignup = () => {
-    // 회원가입 로직을 여기에 추가
-    console.log("Signing up with", { name, nickname, email, password, phone });
-    navigate("/"); // 회원가입 성공 후 로그인 페이지로 이동
+  const handleSignup = async () => {
+    const signupData = {
+      username: name,
+      nickname: nickname,
+      phone_number: phone,
+      email: email,
+      password: password,
+      birthdate: birthdate,
+    };
+  
+    try {
+      const response = await fetch("http://localhost:8080/user/sign_up", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(signupData),
+      });
+  
+      // 응답이 JSON 형식인지 확인
+      const data = await response.json().catch(() => {
+        throw new Error("응답 형식이 JSON이 아닙니다.");
+      });
+  
+      if (response.ok) {
+        console.log("회원가입 성공:", data);
+        navigate("/");
+      } else {
+        console.error("회원가입 실패:", data);
+        // 에러 메시지 처리 (예: 알림 표시)
+      }
+    } catch (error) {
+      console.error("회원가입 중 오류 발생:", error);
+    }
   };
+  
 
   return (
     <div className="App">
@@ -160,10 +192,10 @@ function Signup() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <input
-              type="password"
-              placeholder="비밀번호 재입력"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              type="date"
+              placeholder="생년월일"
+              value={birthdate}
+              onChange={(e) => setBirthdate(e.target.value)}
             />
             <div className="signup-buttons">
               <button onClick={handleSignup}>확인</button>
