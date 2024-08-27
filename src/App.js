@@ -19,6 +19,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import CoupleCheck from "./CoupleCheck"; // CoupleCheck 컴포넌트 임포트
 import Schedule from "./components/Schedule";
+import MainLayout from './components/MainLayout';
 
 // 로그인 페이지 컴포넌트
 function App() {
@@ -26,10 +27,35 @@ function App() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    // 로그인 로직을 여기에 추가
-    console.log("Logging in with", email, password);
-    navigate("/dashboard"); // 로그인 성공 후 대시보드 페이지로 이동
+  const handleLogin = async () => {
+    const loginData = {
+      email: email,
+      password: password,
+    };
+
+    try {
+      const response = await fetch("http://localhost:8080/user/sign_in", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginData),
+      });
+
+      const data = await response.json().catch(() => {
+        throw new Error("응답 형식이 JSON이 아닙니다.");
+      });
+
+      if (response.ok) {
+        console.log("로그인 성공:", data);
+        navigate("/dashboard"); // 로그인 성공 후 대시보드 페이지로 이동
+      } else {
+        console.error("로그인 실패:", data);
+        // 에러 메시지 처리 (예: 알림 표시)
+      }
+    } catch (error) {
+      console.error("로그인 중 오류 발생:", error);
+    }
   };
 
   const handleGoogleLogin = () => {
@@ -77,7 +103,7 @@ function App() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <button onClick={handleLogin}>로그인</button>
-            <div className="separator"></div> {/*선으로 나눔 */}
+            <div className="separator"></div> {/* 선으로 나눔 */}
             <a href="/forgot-password" className="forgot-link">
               비밀번호를 까먹으셨나요?
             </a>
@@ -137,7 +163,6 @@ function Signup() {
         body: JSON.stringify(signupData),
       });
   
-      // 응답이 JSON 형식인지 확인
       const data = await response.json().catch(() => {
         throw new Error("응답 형식이 JSON이 아닙니다.");
       });
@@ -147,7 +172,6 @@ function Signup() {
         navigate("/");
       } else {
         console.error("회원가입 실패:", data);
-        // 에러 메시지 처리 (예: 알림 표시)
       }
     } catch (error) {
       console.error("회원가입 중 오류 발생:", error);
@@ -272,6 +296,7 @@ function MainApp() {
         <Route path="/couple-check" element={<CoupleCheck />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="Schedule" element={<Schedule />} />
+        <Route path="/main" element={<MainLayout />} />
       </Routes>
     </Router>
   );
