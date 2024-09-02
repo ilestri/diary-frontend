@@ -1,0 +1,192 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.header-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 40px;
+  color: #fff;
+  z-index: 10;
+}
+
+.header-icon2 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  color: #fff;
+  z-index: 10;
+}
+
+.header-icon22 {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  font-size: 40px;
+  color: #fff;
+  z-index: 10;
+}
+
+.header-icon3 {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 40px;
+  color: #fff;
+  z-index: 10;
+}
+
+.header-icon4 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 40px;
+  color: #fff;
+  z-index: 10;
+}
+
+.box {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 400px; /* 박스 너비를 동일하게 설정 */
+  margin: 20px; /* 박스 사이의 간격 설정 */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.container input {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+  width: 300px; /* 입력 필드 너비를 동일하게 설정 */
+}
+
+.container button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 300px; /* 버튼 너비를 동일하게 설정 */
+  display: flex;
+  align-items: center; /* 수직 정렬 */
+  justify-content: center; /* 수평 정렬 */
+}
+
+.separator {
+  width: 80%;
+  border-bottom: 1px solid rgb(173, 168, 168);
+  margin: 10px 0;
+}
+
+.forgot-link {
+  margin-top: 10px;
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.social-login,
+.signup-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* 너비 조절 */
+  align-items: center; /* 중앙 정렬 */
+}
+
+.social-login button,
+.signup-buttons button {
+  margin: 5px 0;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 300px; /* 버튼 너비를 동일하게 설정 */
+  display: flex; /* Flexbox 사용 */
+  align-items: center; /* 수직 정렬 */
+  justify-content: center; /* 수평 정렬 */
+}
+
+.login-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* 버튼 사이 간격 */
+  width: 60%;
+  align-items: center; /* 중앙 정렬 */
+}
+
+.login-buttons button {
+  flex: 1;
+  margin: 0 6px; /* 버튼 사이 간격 */
+}
+
+.social-logo {
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.icon {
+  margin: 10px 0;
+  font-size: 100px;
+  display: flex;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container-box h1 {
+  font-size: 0.8em; /* h1 크기 조정 */
+}
+
+.container-box h2 {
+  font-size: 1.4em;
+}
+
+.signup-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* 버튼 사이 간격 */
+  width: 80%; /* 부모 요소의 전체 너비 사용 */
+}
+
+.signup-buttons button {
+  width: 45%; /* 버튼 사이 넓이 */
+}
+
+.container-box {
+  margin-top: 50px;
+}

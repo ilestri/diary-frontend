@@ -1,0 +1,21 @@
+/* Footer.css */
+.footer_copy {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+  }
+  
+  .footer_copy h3 a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .footer_copy h3 a:hover {
+    color: #007bff;
+  }
+  
+  .footer_copy p {
+    margin: 10px 0 0;
+    color: #666;
+  }

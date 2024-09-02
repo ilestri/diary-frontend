@@ -1,0 +1,75 @@
+.background-logo {
+  width: 100%;
+  height: auto;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  background: white;
+  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 60px; /* 모달 하단 패딩 조정 */
+  border-radius: 8px;
+  width: 700px;
+  height: 500px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /*버튼 사이 간격*/
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+}
+
+.close-button {
+  background: #ff5f5f;
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.close-button:hover {
+  background: #ff3b3b;
+}
+
+.date-picker {
+  margin-top: 40px;
+  width: 400px;
+  height: 20px;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.modal p {
+  margin: 0;
+  margin-bottom: 10px; /* 텍스트와 DatePicker 사이의 간격을 줄임 */
+  font-size: 16px;
+  color: #000;
+}
+
+.text-input {
+  width: 80%;
+  height: 200px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
