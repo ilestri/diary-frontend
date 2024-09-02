@@ -19,7 +19,7 @@ const Login = () => {
       };
   
       try {
-        const response = await fetch("http://localhost:8080/user/sign_in", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/user/sign_in`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
