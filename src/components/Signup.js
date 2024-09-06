@@ -41,7 +41,7 @@ const Signup = () => {
           <h2>회원가입</h2>
           <div className="container">
             <input type="text" placeholder="이름" value={name} onChange={(e) => setName(e.target.value)} />
-            <input type="text" placeholder="전화번호" value={phone} onChange={(e) => setPhone(e.target.value)} />
+            <input type="tel" placeholder="전화번호" value={phone} onChange={(e) => setPhone(e.target.value)} />
             <input type="text" placeholder="아이디" value={nickname} onChange={(e) => setNickname(e.target.value)} />
             <input type="email" placeholder="이메일" value={email} onChange={(e) => setEmail(e.target.value)} />
             <input type="password" placeholder="비밀번호" value={password} onChange={(e) => setPassword(e.target.value)} />

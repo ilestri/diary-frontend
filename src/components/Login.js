@@ -33,6 +33,8 @@ const Login = () => {
   
         if (response.ok) {
           console.log("로그인 성공:", data);
+          // JWT 토큰을 localStorage에 저장
+          localStorage.setItem("token", data.token);
           navigate("/dashboard"); // 로그인 성공 후 대시보드 페이지로 이동
         } else {
           console.error("로그인 실패:", data);
